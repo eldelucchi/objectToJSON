@@ -13,29 +13,19 @@
                 </style>
             <!-- chart instance -->
             <script>
-            var dataSource;
-            //function updateJSON(json) {
-              //  dataSource = JSON.parse(json);
-                //dataSource = json;
-                //print(json);
-            //}
-            function updateJSON(json){
-                document.body.style.backgroundColor = "red";
-            }
-            //dataSource = {"chart": {"caption": "Your Weekly Performance","subcaption": "Week of 11/26","xaxisname": "Scores","yaxisname": "Ratings You've Given","formatnumberscale": "1","plottooltext": "You gave a <b>$dataValue</b> for <b>$seriesName</b> on $label","theme": "fusion","drawcrossline": "1"},"categories":[{"category":[{"label":"Monday"},{"label":"Tuesday"},{"label":"Wednesday"}]}],"dataset":[{"seriesname": "Nutrition","data": [{"value": "4"},{"value": "5"},{"value": "5"}]},{"seriesname": "Hydration","data": [{"value": "2"},{"value": "2"},{"value": "4"}]},{"seriesname": "Percieved Stress","data": [{"value": "3"},{"value": "5"},{"value": "1"}]},{"seriesname": "Fatigue","data": [{"value": "3"},{"value": "3"},{"value": "4"}]},{"seriesname": "Hours of Sleep","data": [{"value": "8"},{"value": "6"},{"value": "9"}]},{"seriesname": "Overall Readiness Score","data": [{"value": "3.5"},{"value": "3.5"},{"value": "3"}]}]};
-            
-            //document.getElementById("print").innerHTML = json;
-            
-            FusionCharts.ready(function() {
-                               var myChart = new FusionCharts({
-                                                              type: "scrollcolumn2d",
-                                                              renderAt: "chart-container",
-                                                              width: "100%",
-                                                              height: '800', // TODO: Change this to the size of the screen
-                                                              dataFormat: "json",
-                                                              dataSource
-                                                              }).render();
-                               });            </script>
+                const dataSource = {"chart": {"caption": "Your Weekly Performance","subcaption": "Week of 11/26","xaxisname": "Scores","yaxisname": "Ratings You've Given","formatnumberscale": "1","plottooltext": "You gave a <b>$dataValue</b> for <b>$seriesName</b> on $label","theme": "fusion","drawcrossline": "1"},"categories":[{"category":[{"label":"Monday"},{"label":"Tuesday"},{"label":"Wednesday"}]}],"dataset":[{"seriesname": "Nutrition","data": [{"value": "4"},{"value": "5"},{"value": "5"}]},{"seriesname": "Hydration","data": [{"value": "2"},{"value": "2"},{"value": "4"}]},{"seriesname": "Percieved Stress","data": [{"value": "3"},{"value": "5"},{"value": "1"}]},{"seriesname": "Fatigue","data": [{"value": "3"},{"value": "3"},{"value": "4"}]},{"seriesname": "Hours of Sleep","data": [{"value": "8"},{"value": "6"},{"value": "9"}]},{"seriesname": "Overall Readiness Score","data": [{"value": "3.5"},{"value": "3.5"},{"value": "3"}]}]};
+                
+                
+                FusionCharts.ready(function() {
+                                   var myChart = new FusionCharts({
+                                                                  type: "scrollcolumn2d",
+                                                                  renderAt: "chart-container",
+                                                                  width: "100%",
+                                                                  height: '800', // TODO: Change this to the size of the screen
+                                                                  dataFormat: "json",
+                                                                  dataSource
+                                                                  }).render();
+                                   });            </script>
             </head>
     <body>
         <!-- chart container -->

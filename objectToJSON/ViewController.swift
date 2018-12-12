@@ -5,7 +5,6 @@
 //  Created by Emma Delucchi on 12/10/18.
 //  Copyright © 2018 Emma Delucchi. All rights reserved.
 //
-
 import UIKit
 import WebKit
 
@@ -52,7 +51,7 @@ class ViewController: UIViewController, WKUIDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-}
+    }
     
     func passInJSON(json: String){
         print("What is in this JSON? \(json)")
@@ -63,13 +62,12 @@ class ViewController: UIViewController, WKUIDelegate {
             }
         }
     }
-
-
+    
+    
 }
 
 //Update HTML file after the JSON is set
 //How to call JS function embemmed  in HTML from swift
-
 
 //From first link sent to Gina:
 //extension ViewController: WKNavigationDelegate {
