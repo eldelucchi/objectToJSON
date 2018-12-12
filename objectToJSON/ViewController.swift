@@ -12,7 +12,6 @@ import WebKit
 class ViewController: UIViewController, WKUIDelegate {
     
     var webView: WKWebView!
-    var json: String
     
     override func loadView() {
         let webConfiguration = WKWebViewConfiguration()
@@ -30,7 +29,9 @@ class ViewController: UIViewController, WKUIDelegate {
         let htmlUrl = URL(fileURLWithPath: htmlPath!, isDirectory: false)
         //webView.loadFileURL(htmlUrl, allowingReadAccessTo: htmlUrl)
         //view = webView
-        webView.navigationDelegate = self
+        
+        //From first link sent to Gina
+        //webView.navigationDelegate = self
         
         //Test for Day class
         var day1 = Day(name: "Monday", hydration: 2, nutrition: 4, percievedStress: 3, fatigue: 3, sleepHours: 8)
@@ -41,7 +42,7 @@ class ViewController: UIViewController, WKUIDelegate {
         days.appendDay(day2)
         days.appendDay(day3)
         var jsonSerializer = JSONSerializer(days)
-        json = jsonSerializer.jsonString
+        var json = jsonSerializer.jsonString
         passInJSON(json: json)
         
         webView.loadFileURL(htmlUrl, allowingReadAccessTo: htmlUrl)
@@ -69,15 +70,17 @@ class ViewController: UIViewController, WKUIDelegate {
 //Update HTML file after the JSON is set
 //How to call JS function embemmed  in HTML from swift
 
-extension ViewController: WKNavigationDelegate {
-    
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print("Finished navigating to url \(webView.url)")
-        
-        webView.evaluateJavaScript("updateJSON(\(json))") { (any, error) in
-            dump(error)
-            print(any)
-        }
-        
-    }
-}
+
+//From first link sent to Gina:
+//extension ViewController: WKNavigationDelegate {
+//
+//    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+//        print("Finished navigating to url \(webView.url)")
+//
+//        webView.evaluateJavaScript("updateJSON(\(json))") { (any, error) in
+//            dump(error)
+//            print(any)
+//        }
+//
+//    }
+//}
